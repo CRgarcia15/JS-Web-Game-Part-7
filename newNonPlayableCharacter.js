@@ -51,11 +51,9 @@ function newNonPlayableCharacter(x, y) {
         stop()
     }
 
-    async function stop(time) {
+    function stop(time) {
         direction = null
         element.src = `./assets/red-character/static.gif`
-        await sleep(time)
-        stop()
     }
 
     return {
@@ -68,7 +66,7 @@ function newNonPlayableCharacter(x, y) {
     }
 }
 
-function sleep (time) {
+async function sleep (time) {
     return new Promise (resolve => {
         setTimeout(resolve,time)
     })
